@@ -25,13 +25,22 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "eRestaurantWebSite", "http:
 		DefaultWebSiteLanguage = "Visual C#"
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "eRestaurantSystem", "eRestaurantSystem\eRestaurantSystem.csproj", "{48ADB4BF-F988-48BA-92CD-065C22D1EA74}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{AB7FAC44-41B9-4E7F-9D88-5D43066957FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{AB7FAC44-41B9-4E7F-9D88-5D43066957FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AB7FAC44-41B9-4E7F-9D88-5D43066957FA}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB7FAC44-41B9-4E7F-9D88-5D43066957FA}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{48ADB4BF-F988-48BA-92CD-065C22D1EA74}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{48ADB4BF-F988-48BA-92CD-065C22D1EA74}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{48ADB4BF-F988-48BA-92CD-065C22D1EA74}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{48ADB4BF-F988-48BA-92CD-065C22D1EA74}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
