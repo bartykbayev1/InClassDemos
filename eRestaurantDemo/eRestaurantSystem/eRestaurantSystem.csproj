@@ -48,6 +48,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BLL\AdminController.cs" />
     <Compile Include="DAL\eRestaurantContext.cs" />
     <Compile Include="Entities\Reservation.cs" />
     <Compile Include="Entities\SpecialEvent.cs" />
@@ -55,7 +56,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="BLL\" />
     <Folder Include="Entities\DTOs\" />
     <Folder Include="Entities\POCO\" />
   </ItemGroup>
