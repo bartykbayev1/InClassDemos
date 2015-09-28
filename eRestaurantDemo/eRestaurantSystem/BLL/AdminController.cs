@@ -25,11 +25,35 @@ namespace eRestaurantSystem.BLL
                 //to do so we will use DbSet eRestaurantContext
                 //call SpecialEvent (done by mapping)
 
-                return context.SpecialEvents.OrderBy(x => x.Description).ToList();
-
                 //method syntax 
+                //return context.SpecialEvents.OrderBy(x => x.Description).ToList();
+
+                //query syntax
+                var results = from item in context.SpecialEvents
+                              orderby item.Description
+                              select item;
+
+                return results.ToList();
+               
             }
         }
-        
+
+
+
+        [DataObjectMethod(DataObjectMethodType.Select, false)]
+        public List<Reservation> GetReservationByEventCode(string eventcode)
+        {
+            using (var context = new eRestaurantContext())
+            {
+                
+                var results = from item in context.Reservations
+                              where item.EventCode.Equals(eventcode)
+                              orderby item.CustomerName, item.ReservationDate
+                              select item;
+
+                return results.ToList();
+
+            }
+        }
     }
 }
