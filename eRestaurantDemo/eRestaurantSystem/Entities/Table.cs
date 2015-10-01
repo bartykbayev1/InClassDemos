@@ -25,6 +25,9 @@ namespace eRestaurantSystem.Entities
             //NAvigation properties
             public virtual ICollection<Reservation> Reservations { get; set; }
 
+            public virtual ICollection<Bill> Bills { get; set; }
+
+
             public Table()
             {
                 Available = true;
