@@ -33,6 +33,9 @@ namespace eRestaurantSystem.Entities
 
         public virtual MenuCategory Category { get; set; }
 
+
+        public virtual ICollection<BillItem> BillItems { get; set; }
+
         public Item()
         {
             Active = true;
