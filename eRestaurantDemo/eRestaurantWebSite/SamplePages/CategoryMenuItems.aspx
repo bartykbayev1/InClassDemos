@@ -5,7 +5,7 @@
     <div class="row col-md-12">
 
 
-        <asp:Repeater ID="MenuCategories" runat="server">
+        <asp:Repeater ID="MenuCategories" runat="server" DataSourceID="ODSCategoryMenuItems">
             <ItemTemplate>
                 <h3>
                 <%#Eval ("Description") %></h3>
@@ -24,6 +24,6 @@
 
 
     </div>
-    <asp:ObjectDataSource ID="ODSCategoryMenuItems" runat="server"></asp:ObjectDataSource>
+    <asp:ObjectDataSource ID="ODSCategoryMenuItems" runat="server" OldValuesParameterFormatString="original_{0}" SelectMethod="CategoryMenuItems_List" TypeName="eRestaurantSystem.BLL.AdminController"></asp:ObjectDataSource>
 </asp:Content>
 
