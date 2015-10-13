@@ -18,6 +18,9 @@ namespace eRestaurantSystem.BLL
     [DataObject]
     public class AdminController
     {
+        #region Query Samples
+
+
         [DataObjectMethod(DataObjectMethodType.Select, false)]
         public List<SpecialEvent> SpecialEvent_List()
         {
@@ -122,5 +125,60 @@ namespace eRestaurantSystem.BLL
                 return results.ToList();
             }
         }
+
+        #endregion
+
+        #region CRUD Insert, Update, Delete
+
+        [DataObjectMethod(DataObjectMethodType.Insert,false)]
+        public void SpecialEvents_Add(SpecialEvent item)
+        {
+            //input into this method is at the instance level
+            using (var context = new eRestaurantContext()){
+                //create a pointer variable for the instance type
+                //set pointer to null
+                SpecialEvent added = null;
+
+                //set up the add request for DBContext
+                added = context.SpecialEvents.Add(item);
+
+                //saving the changes will cause .Add to execute
+                //commits the add to the database
+                //evaluates the annotations (validation) on your entity
+
+                context.SaveChanges();
+            }
+        }
+
+        [DataObjectMethod(DataObjectMethodType.Update,false)]
+        public void SpecialEvents_Update(SpecialEvent item)
+        {
+            using (var context = new eRestaurantContext())
+            {
+                context.Entry<SpecialEvent>(context.SpecialEvents.Attach(item)).State = System.Data.Entity.EntityState.Modified;
+                context.SaveChanges();
+
+            }
+        }
+
+        [DataObjectMethod(DataObjectMethodType.Delete, false)]
+        public void SpecialEvents_Delete(SpecialEvent item)
+        {
+            using (var context = new eRestaurantContext())
+            {
+               //look th eitem instance on th edatabase to detemine if the insatnce exist
+                //on the delete make sure u have PK name
+                SpecialEvent existing = context.SpecialEvents.Find(item.EventCode);
+
+
+                //set up the data command request 
+                existing = context.SpecialEvents.Remove(existing);
+
+                //commit the action to happen
+                context.SaveChanges();
+
+            }
+        }
+        #endregion
     }
 }
