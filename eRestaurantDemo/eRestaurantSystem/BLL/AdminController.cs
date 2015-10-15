@@ -60,6 +60,7 @@ namespace eRestaurantSystem.BLL
 
                 //query syntax
                 var results = from item in context.Waiters
+                              orderby item.FirstName
                               select item;
 
                 return results.ToList();
