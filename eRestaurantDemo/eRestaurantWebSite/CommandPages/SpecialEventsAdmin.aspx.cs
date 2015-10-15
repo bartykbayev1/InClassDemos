@@ -11,4 +11,8 @@ public partial class CommandPages_SpecialEventsAdmin : System.Web.UI.Page
     {
 
     }
+    protected void CheckForException(object sender, ObjectDataSourceStatusEventArgs e)
+    {
+        MessageUserControl1.HandleDataBoundException(e);
+    }
 }
