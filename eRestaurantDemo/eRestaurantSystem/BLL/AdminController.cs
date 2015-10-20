@@ -166,6 +166,26 @@ namespace eRestaurantSystem.BLL
                 return results.ToList();
             }
         }
+        //wa problem with class with the same name
+        [DataObjectMethod(DataObjectMethodType.Select, false)]
+        public List<eRestaurantSystem.Entities.POCO.CategoryMenuItem> GetReportCategoryMenuItems()
+        {
+            using (eRestaurantContext context = new eRestaurantContext())
+            {
+                var results = from cat in context.Items
+                              orderby cat.Category.Description, cat.Description
+                              select new CategoryMenuItem
+                              {
+                                  CategoryDescription = cat.Category.Description,
+                                  ItemDescription = cat.Description,
+                                  Price = cat.CurrentPrice,
+                                  Calories = cat.Calories,
+                                  Comment = cat.Comment
+                              };
+
+                return results.ToList(); // this was .Dump() in Linqpad
+            }
+        }
 
         #endregion
 
@@ -279,5 +299,7 @@ namespace eRestaurantSystem.BLL
             }
         }
         #endregion
+
+
     }
 }

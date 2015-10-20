@@ -55,8 +55,7 @@
                         <li><a runat="server" href="~/Contact">Contact</a></li>
                         <li><a runat="server" href="~/SamplePages/SpecialEventsAdmin">Special Events Admin</a></li>
                         
-                        <li><a runat="server" href="~/SamplePages/CategoryMenuItems">CategoryMenuItems</a></li>
-                        
+                        <li><a runat="server" href="~/SamplePages/CategoryMenuItems">CategoryMenuItems</a></li>                        
                         <li><a runat="server" href="~/SamplePages/ReservationsByDate">RepeatorDisplay</a></li>
                         
                         <li><a runat="server" href="~/SamplePages/ListView">ListView</a></li>
@@ -64,7 +63,7 @@
                         <li><a runat="server" href="~/CommandPages/SpecialEventsAdmin">ListViewCRUD</a></li>
 
                         <li><a runat="server" href="~/CommandPages/WaiterAdmin">WaiterViewCRUD</a></li>
-
+                        <li><a runat="server" href="~/Reports/ReportCategoryMenuItems">Report</a></li>
                     </ul>
                     <asp:LoginView runat="server" ViewStateMode="Disabled">
                         <AnonymousTemplate>
