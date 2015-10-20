@@ -13,7 +13,11 @@
 
     <br />
 
-
+     <asp:Label ID="Label1" runat="server" Text="SelectWaiterForUpdate"></asp:Label>
+                <asp:DropDownList ID="WaiterList" runat="server" DataSourceID="ODSWaiters" DataTextField="FirstName" DataValueField="WaiterID" Width="177px" AppendDataBoundItems="True">
+                </asp:DropDownList>
+                
+                 <asp:LinkButton ID="FetchWaiter" runat="server" OnClick="FetchWaiter_Click">FetchWaiter</asp:LinkButton>
     <table style="width: 70%">
         <tr>
             <td>ID</td>
@@ -66,21 +70,17 @@
         </tr>
         <tr>
             <td>
-                <asp:Label ID="Label1" runat="server" Text="SelectWaiterForUpdate"></asp:Label>
-                <asp:DropDownList ID="WaiterList" runat="server" DataSourceID="ODSWaiters" DataTextField="FirstName" DataValueField="WaiterID" Width="177px" AppendDataBoundItems="True">
-                </asp:DropDownList>
-                
-                 <asp:LinkButton ID="FetchWaiter" runat="server" OnClick="FetchWaiter_Click">FetchWaiter</asp:LinkButton>
+               
             </td>
             <td>&nbsp;</td>
             <td>&nbsp;</td>
         </tr>
         <tr>
             <td>
-                <asp:LinkButton ID="InsertWaiter" runat="server">Insert</asp:LinkButton>
+                <asp:LinkButton ID="InsertWaiter" runat="server" OnClick="InsertWaiter_Click">Insert</asp:LinkButton>
             </td>
             <td>
-                <asp:LinkButton ID="UpdateWaiter" runat="server">Update</asp:LinkButton>
+                <asp:LinkButton ID="UpdateWaiter" runat="server" OnClick="UpdateWaiter_Click">Update</asp:LinkButton>
             </td>
             <td>&nbsp;</td>
         </tr>

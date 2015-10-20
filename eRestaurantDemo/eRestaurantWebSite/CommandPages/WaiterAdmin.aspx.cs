@@ -56,4 +56,56 @@ public partial class CommandPages_WaiterAdmin : System.Web.UI.Page
         }
     }
 
+    protected void InsertWaiter_Click(object sender, EventArgs e)
+    {
+       
+        //This example is using the TryRun (method) in line
+        MessageUserControl.TryRun(() =>
+            {
+                Waiter item = new Waiter();
+                item.FirstName = FirstName.Text;
+                item.LastName = LastName.Text;
+                item.Address = Address.Text;
+                item.Phone = Phone.Text;
+                item.HireDate= DateTime.Parse(DateHired.Text);
+                item.ReleaseDate = null;
+                AdminController sysmgr = new AdminController();
+                WaiterID.Text = sysmgr.Waiter_Add(item).ToString();
+                MessageUserControl.ShowInfo("Waiter added");
+            }
+                );
+    }
+    protected void UpdateWaiter_Click(object sender, EventArgs e)
+    {
+        if (string.IsNullOrEmpty(WaiterID.Text))
+        {
+            MessageUserControl.ShowInfo("Waiter error");
+        }
+        else
+        {
+            MessageUserControl.TryRun(() =>
+            {
+                Waiter item = new Waiter();
+                item.WaiterID = int.Parse(WaiterID.Text);
+                item.FirstName = FirstName.Text;
+                item.LastName = LastName.Text;
+                item.Address = Address.Text;
+                item.Phone = Phone.Text;
+                item.HireDate = DateTime.Parse(DateHired.Text);
+                if (string.IsNullOrEmpty(DateReleased.Text))
+                {
+                    item.ReleaseDate = null;
+                }
+                else
+                {
+                    item.ReleaseDate = DateTime.Parse(DateReleased.Text);
+                }
+                
+                AdminController sysmgr = new AdminController();
+                WaiterID.Text = sysmgr.Waiter_Add(item).ToString();
+                MessageUserControl.ShowInfo("Waiter updated");
+            }
+                );
+        }
+    }
 }

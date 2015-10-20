@@ -55,15 +55,15 @@
                         <li><a runat="server" href="~/Contact">Contact</a></li>
                         <li><a runat="server" href="~/SamplePages/SpecialEventsAdmin">Special Events Admin</a></li>
                         
-                        <li><a runat="server" href="~/SamplePages/CategoryMenuItems">Special Events Admin</a></li>
+                        <li><a runat="server" href="~/SamplePages/CategoryMenuItems">CategoryMenuItems</a></li>
                         
-                        <li><a runat="server" href="~/SamplePages/ReservationsByDate">Repeator display</a></li>
+                        <li><a runat="server" href="~/SamplePages/ReservationsByDate">RepeatorDisplay</a></li>
                         
-                        <li><a runat="server" href="~/SamplePages/ListView">List view</a></li>
+                        <li><a runat="server" href="~/SamplePages/ListView">ListView</a></li>
 
-                        <li><a runat="server" href="~/CommandPages/SpecialEventsAdmin">List view CRUD</a></li>
+                        <li><a runat="server" href="~/CommandPages/SpecialEventsAdmin">ListViewCRUD</a></li>
 
-                        <li><a runat="server" href="~/CommandPages/WaiterAdmin">Waiter view CRUD</a></li>
+                        <li><a runat="server" href="~/CommandPages/WaiterAdmin">WaiterViewCRUD</a></li>
 
                     </ul>
                     <asp:LoginView runat="server" ViewStateMode="Disabled">
