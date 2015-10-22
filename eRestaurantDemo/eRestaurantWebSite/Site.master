@@ -64,6 +64,7 @@
 
                         <li><a runat="server" href="~/CommandPages/WaiterAdmin">WaiterViewCRUD</a></li>
                         <li><a runat="server" href="~/Reports/ReportCategoryMenuItems">Report</a></li>
+                        <li><a runat="server" href="~/Reports/WaiterBillingReport">WaiterBilling</a></li>
                     </ul>
                     <asp:LoginView runat="server" ViewStateMode="Disabled">
                         <AnonymousTemplate>
