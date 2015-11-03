@@ -15,8 +15,14 @@ namespace eRestaurantSystem.Entities
 {
     public class Reservation
     {
-        [Key]
+        //constant string for readability
+        public const string Booked = "B";
+        public const string Arrived = "A";
+        public const string Complete= "C";
+        public const string NoShow = "N";
+        public const string Cancel = "X";
         
+        [Key]        
         public int ReservationID { get; set; }
         [Required]
         [StringLength(40)]
