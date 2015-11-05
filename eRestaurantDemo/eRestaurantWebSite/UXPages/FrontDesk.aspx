@@ -51,7 +51,7 @@
                     <div>
                         <h4><%# Item.SeatingTime %></h4>
                         <asp:ListView ID="ReservationSummaryListView" runat="server"
-                                ItemType="eRestaurant.Entities.DTOs.ReservationSummary"
+                                ItemType="eRestaurant.Entities.POCO.ReservationSummary"
                                 DataSource="<%# Item.Reservations %>">
                             <LayoutTemplate>
                                 <div class="seating">
