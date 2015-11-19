@@ -84,7 +84,8 @@
                             </asp:Panel>
                             <asp:Panel ID="OccupiedTablePanel" runat="server"
                                     Visible='<%# Item.Taken  %>'>
-                                <%# Item.Waiter %>
+                                <asp:HyperLink ID ="ServingTableLink" runat ="Server" NavigateURL = '<%# string.Format("~/UXPages/ServingTables.aspx?waiter= {0}&bill={1}&md={2}&mt={3}&mds={4}&mts={5}",Item.Waiter,Item.BillID,Mocker.MockDate.Ticks,Mocker.MOckTIme.Ticks, Mocker.MockDate.ToShortDateString(),Mocker.MockTime.ToString()) %>'>
+                                <%# Item.Waiter %></asp:HyperLink>
                                 <asp:Label ID="ReservationNameLabel" runat="server" 
                                         Text='<%# "&mdash;" + Item.ReservationName %>'
                                         Visible='<%# !string.IsNullOrEmpty(Item.ReservationName) %>' />
