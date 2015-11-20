@@ -102,7 +102,7 @@
     </div>
     <asp:ObjectDataSource runat="server" ID="SeatingObjectDataSource" OldValuesParameterFormatString="original_{0}"
         SelectMethod="SeatingByDateTime" 
-        TypeName="eRestaurantSystem.BLL.AdminController" OnSelecting="SeatingObjectDataSource_Selecting">
+        TypeName="eRestaurantSystem.BLL.AdminController" >
         <SelectParameters>
             <asp:ControlParameter ControlID="SearchDate" PropertyName="Text" Name="date" Type="DateTime"></asp:ControlParameter>
             <asp:ControlParameter ControlID="SearchTime" PropertyName="Text" DbType="Time" Name="time"></asp:ControlParameter>
