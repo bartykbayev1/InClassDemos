@@ -12,6 +12,7 @@
     <uc1:MessageUserControl runat="server" ID="MessageUserControl" />
 
     <br />
+    Currently looged guys <asp:Label runat="server" Text="CurrentUserName" ></asp:Label>
 
      <asp:Label ID="Label1" runat="server" Text="SelectWaiterForUpdate"></asp:Label>
                 <asp:DropDownList ID="WaiterList" runat="server" DataSourceID="ODSWaiters" DataTextField="FirstName" DataValueField="WaiterID" Width="177px" AppendDataBoundItems="True">

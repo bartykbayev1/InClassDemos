@@ -10,6 +10,7 @@ using eRestaurantSystem.BLL;
 using eRestaurantSystem.DAL;
 using eRestaurantSystem.Entities;
 using EatIn.UI;
+using Microsoft.AspNet.Identity;
 #endregion
 
 public partial class CommandPages_WaiterAdmin : System.Web.UI.Page
@@ -18,8 +19,19 @@ public partial class CommandPages_WaiterAdmin : System.Web.UI.Page
     {
         
         if (!Page.IsPostBack){
-            RefreshWaiterList("0");
-            DateHired.Text = DateTime.Today.ToShortDateString();
+
+            //check if user requestor is loged in 
+            if (Request.IsAuthenticated)
+            {
+                Response.Redirect("~/Account/Login.aspx");
+            }
+            else
+            {
+                CurrentUserName.Text = User.Identity.GetUserName();
+                RefreshWaiterList("0");
+                DateHired.Text = DateTime.Today.ToShortDateString();
+            }
+           
         }
             
     }
