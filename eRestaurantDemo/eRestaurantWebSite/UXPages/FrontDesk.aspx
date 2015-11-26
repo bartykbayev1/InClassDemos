@@ -78,6 +78,7 @@
                                         <asp:ListItem Value="0">[select a waiter]</asp:ListItem>
                                     </asp:DropDownList>
                                 </span>
+
                                 <span class="input-group-addon" style="width:5px;padding:0;border:0;background-color:white;"></span>
                                 <asp:LinkButton ID="LinkButton1" runat="server" Text="Seat Customers"
                                     CssClass="input-group-btn" CommandName="Select" CausesValidation="False" />
@@ -123,7 +124,8 @@
                         <h4><%# Item.SeatingTime %></h4>
                         <asp:ListView ID="ReservationSummaryListView" runat="server"
                                 ItemType="eRestaurantSystem.Entities.POCO.ReservationSummary"
-                                DataSource="<%# Item.Reservations %>">
+                                DataSource="<%# Item.Reservations %>"
+                            onitemcommand="ReservationSummaryListView_ItemCommand">
                             <LayoutTemplate>
                                 <div class="seating">
                                     <span runat="server" id="itemPlaceholder" />
@@ -135,13 +137,31 @@
                                     <%# Item.NumberInParty %> —
                                     <%# Item.Status %> —
                                     PH:
-                                    <%# Item.Contact %>
+                                    <%# Item.Contact %> - 
+                                    <asp:LinkButton ID="InsertButton" runat="server"
+                                        CommandName ="Seat" CommandArgument='<%# Item.ID %>'>
+                                        Reservation Seating
+                                        <span class="glyphicon glyphicon-plus"> </span>
+                                    </asp:LinkButton>
                                 </div>
                             </ItemTemplate>
                         </asp:ListView>
                     </div>
                 </ItemTemplate>
             </asp:Repeater>
+
+            <asp:Panel ID="ReservationSeatingPanel" runat="server" Visible='<%# ShowReservationSeating() %>'>
+    <asp:DropDownList ID="WaiterDropDownList" runat="server" CssClass="seating"
+        AppendDataBoundItems="true" DataSourceID="WaitersDataSource"
+        DataTextField="FullName" DataValueField="WaiterId">
+        <asp:listitem value="0">[select a waiter]</asp:listitem>
+    </asp:DropDownList>
+    <asp:ListBox ID="ReservationTableListBox" runat="server" CssClass="seating"                             
+        DataSourceID="AvailableSeatingObjectDataSource" SelectionMode="Multiple" Rows="14"
+        DataTextField="Table" DataValueField="Table">
+    </asp:ListBox>
+</asp:Panel>
+
             <asp:ObjectDataSource runat="server" 
                 ID="ReservationsDataSource" 
                 OldValuesParameterFormatString="original_{0}" 

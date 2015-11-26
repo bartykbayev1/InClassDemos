@@ -29,4 +29,8 @@ public partial class UXPages_FrontDesk : System.Web.UI.Page
         SearchTime.Text = info.ToString("HH:mm");
 
     }
+    protected void ReservationSummaryListView_ItemCommand(object sender, ListViewCommandEventArgs e)
+    {
+
+    }
 }
